@@ -24,7 +24,7 @@ class ReceiptAdmin(admin.ModelAdmin):
     search_fields=('receipt_type','receipt_number')
 
 class TransactionAdmin(admin.ModelAdmin):
-    list_display=('message','wallet')
+    list_display=('message','wallet','amount','description')
     search_fields=('message','wallet','amount','description')
 
 class CardAdmin(admin.ModelAdmin):
@@ -40,12 +40,11 @@ class NotificationAdmin(admin.ModelAdmin):
     search_fields=('title','message','date')
 
 class LoanAdmin(admin.ModelAdmin):
-    list_display=('wallet','amount')
-    search_fields=('message','wallet','amount','description')
-
+    list_display=('wallet','amount',)
+    search_fields=('wallet','amount',)
 class RewardAdmin(admin.ModelAdmin):
-    list_display=('transaction','date_of_reward','points')
-    search_fields=('transaction','reciepient','points')
+    list_display=('transaction','recipient','date_of_reward','points')
+    search_fields=('transaction','recipient','points')
 
 
 admin.site.register(Customer,CustomerAdmin)
@@ -59,6 +58,4 @@ admin.site.register(Transaction,TransactionAdmin)
 admin.site.register(Card,CardAdmin)
 admin.site.register(ThirdParty,ThirdPartyAdmin)
 admin.site.register(Reward,RewardAdmin)
-
-
 

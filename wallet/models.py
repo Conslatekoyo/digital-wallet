@@ -43,10 +43,10 @@ class Receipt(models.Model):
 class Transaction(models.Model):
     message = models.CharField(max_length=100)
     wallet = models.ForeignKey(Wallet,on_delete=models.CASCADE,related_name='Transaction_wallet')
-    transaction_description = models.CharField(max_length=9)
-    transaction_amount = models.BigIntegerField()
-    transaction_charge = models.IntegerField()
-    transaction_type = models.CharField(max_length=6)
+    description = models.CharField(max_length=255)
+    amount = models.BigIntegerField()
+    charge = models.IntegerField()
+    type = models.CharField(max_length=6)
     origin_account = models.ForeignKey(Wallet, on_delete=models.CASCADE,related_name='Transaction_origin')
     destination_account = models.ForeignKey("Wallet", on_delete=models.CASCADE,related_name='Transaction_destination')
 
@@ -78,7 +78,7 @@ class Notification(models.Model):
 
 class Loan(models.Model):
     loan_id = models.IntegerField()
-    loan_type = models.CharField(max_length=15)
+    type = models.CharField(max_length=15)
     loan_balance = models.IntegerField()
     amount = models.IntegerField()
     guaranter = models.CharField(max_length=20)
