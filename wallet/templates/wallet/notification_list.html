@@ -1,0 +1,10 @@
+<table>
+    {%for notification in Notifications%}
+    <tr>
+    <td>{{notification.title}}</td>
+    <td>{{notification.message}}</td>
+    <td>{{notification.date}}</td>
+
+    </tr>
+    {% endfor%}
+</table>

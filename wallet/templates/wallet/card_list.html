@@ -1,0 +1,9 @@
+<table>
+    {%for card in Cards%}
+    <tr>
+    <td>{{card.expiry_date}}</td>
+    <td>{{card.wallet}}</td>
+    <td>{{card.issuer}}</td>
+    </tr>
+    {% endfor%}
+</table>

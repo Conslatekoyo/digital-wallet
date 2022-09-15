@@ -1,0 +1,10 @@
+<table>
+    {%for reward in Rewards%}
+    <tr>
+    <td>{{reward.recipient}}</td>
+    <td>{{reward.date_of_reward}}</td>
+    <td>{{reward.points}}</td>
+
+    </tr>
+    {% endfor%}
+</table>

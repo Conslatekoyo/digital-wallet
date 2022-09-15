@@ -1,0 +1,10 @@
+<table>
+    {%for thirdparty in Thirdparties%}
+    <tr>
+    <td>{{thirdparty.transaction_amount}}</td>
+    <td>{{thirdparty.account}}</td>
+    <td>{{thirdparty.wallet}}</td>
+
+    </tr>
+    {% endfor%}
+</table>
